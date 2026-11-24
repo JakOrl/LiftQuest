@@ -1,20 +1,16 @@
 package com.example.liftquest.navigation
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.DateRange
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.annotation.DrawableRes
+import com.example.liftquest.R
 
 //==========================================
 // Screens
 //==========================================
-sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
-    data object Home : Screen("home", "Home", Icons.Filled.Home)
-    data object Exercises : Screen("exercises", "Exercises", Icons.AutoMirrored.Filled.List)
-    data object Progress : Screen("progress", "Progress", Icons.Filled.DateRange)
-    data object Settings : Screen("settings", "Settings", Icons.Filled.Settings)
+sealed class Screen(val route: String, val title: String, @DrawableRes val iconRes: Int) {
+    data object Home : Screen("home", "Home", R.drawable.ic_home)
+    data object Exercises : Screen("exercises", "Exercises", R.drawable.ic_exercises)
+    data object Progress : Screen("progress", "Progress", R.drawable.ic_progress)
+    data object Settings : Screen("settings", "Settings", R.drawable.ic_settings)
 }
 
 //==========================================
